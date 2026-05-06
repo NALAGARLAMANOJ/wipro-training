@@ -1,0 +1,188 @@
+ntroduction
+
+Introduction to servlets :
+	Window / Standalone application -- CLI - Based on console
+	Web Application --- Browser -  Based on the web related files / Web Server
+			SourceCode --deployed on a server--output on Browser
+			Web server  --  Apache Tomcat 
+			Servlet & Jsp
+			Servlet --- Core Java File but we call it as servlet that resides on a server and
+			            a web page as an response the client is getting is jsp that also reside on a server
+			Struts was introduced -- which is a framework(An architecture of required files & folders you will be getting and also having set of libraries / Binaries
+	Enterprise Application ( Large Scale) 
+	        SourceCode --deployed on a server--output on Browser
+	        Web Server -- Jboss / GlassFish 
+	        Many servers are configured for different purpose
+	        	File Server ( FTP )
+	        	Web Server
+	        	Back Up
+	        	Database Server
+	 Roadmap of IT Career 
+	 		Software Developer ( design / create ,module testing)
+	 		FSD (Design(React) create (BackEnd is your spring) /Database (Mysql/ Mongodb) /pushing the sc on github ) / 
+	 			devops , CI/CD tool ( Devops) / Jenkins , Docker Hub pushing
+	 			images of your app , Kubernetes ( clusturing) , architect , Business team ,Scrum Master
+	 		Spring Framework / Spring Boot  / Microservice based architecture 
+	 		Spring with AI
+	
+	************************************************
+	
+	1) What happen when you open a website
+		1) www.greatlearning.com/signin
+		2) request( will be send by an HTML page) will go to the server( Tomcat)
+		3) Tomcat will identify:
+			Static pages : HTMl/CSS
+			Dynamic : Servlet
+		4) servlet will processes request 
+		5) Response will be generated ( HTML)
+		6) Browser renders UI  
+	2) Http Protocol : Type of requests:
+		1) GET  -- Fetch data
+		2) POST -- Send data
+		3) PUT -- Update
+		4) Delete -- Remove 
+		
+	3) Dynamic login page
+	
+	Request(frontend)(HTML/CSS)JS ----> Backend(Servlet& JSP)JS -----> Database 
+	
+	4) Structure of Servlet
+	     Create a Dynamic Web Project	 
+	 
+	 For preferences on mac pc (use cmd + ,)       								
+
+
+
+index.jsp
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<form action="login" method="get">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="mail">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
+
+_____________________________________________________________________________________________
+
+web.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>LoginSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+   
+  </welcome-file-list>
+  
+  
+  
+    <!-- Step 1: Declare the Servlet -->
+    <servlet>
+    <!-- It could be any name -->
+        <servlet-name>MyLoginServlet</servlet-name>
+     <!-- define the packagename with your actual servlet name -->
+        <servlet-class>com.ecomm.servlet.LoginServlet</servlet-class>
+    </servlet>
+
+    <!-- Step 2: Map the Servlet to a URL -->
+    <servlet-mapping>
+        <servlet-name>MyLoginServlet</servlet-name>
+    <!-- provided to the user/client -->
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+
+_______________________________________________________________________________
+
+
+LoginServlet.java
+
+package com.ecomm.servlet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+//@WebServlet(description = "Login servlet is created for sign in purpose", urlPatterns = { "/login" })
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	PrintWriter out;
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	//	response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String mail = request.getParameter("mail");
+		String pass = request.getParameter("pass");
+		
+		 out  = response.getWriter();
+		
+		 out.println("<br />");
+		
+		 out.println("<br>You request is submitted !<br />");
+	
+	
+		
+	
+		if(pass.equals("admin"))
+		{
+			out.println("Hi" + mail + "You have successfully logged in");
+		}
+		else 
+		{
+			
+			out.println("Incorrect password you have entered");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
