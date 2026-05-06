@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const salaries = [45000, 67000, 36000];
+
+
+       const newSalaries = salaries.map(salary => salary + 1000);
+           document.writeln("New Salary using map method:" + newSalaries);
+
+
+        const highlyPaidEmployees = salaries.filter(salary => salary > 20000);
+            document.writeln("<br>Highly paid employees using filter method: <br>" + highlyPaidEmployees);
+
+// Calculate total salary using reduce
+        const totalSalary = salaries.reduce((total, salary) => total + salary, 0);
+            document.writeln("<br>Total salary of employees using reduce method:<br> " + totalSalary);
+   </script> 
+</body>
+</html>

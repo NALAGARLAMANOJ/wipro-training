@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Discount</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        Product Discount Calculator
+    </header>
+
+    <div class="container">
+        <h2>Enter Product Details</h2>
+
+        <label>Product Name:</label><br>
+        <input type="text" id="productName"><br><br>
+
+        <label>Product Price:</label><br>
+        <input type="number" id="price"><br><br>
+
+        <button onclick="calculatePrice()">Calculate Final Price</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            let productName = document.getElementById("productName").value;
+            let price = parseFloat(document.getElementById("price").value);
+
+            let finalPrice;
+
+            if (price > 1000) {
+                finalPrice = price - (price * 0.10);
+            } else {
+                finalPrice = price;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Product Name: " + productName + "<br>Final Price: " + finalPrice;
+        }
+    </script>
+
+</body>
+</html>
