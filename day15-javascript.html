@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+             header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            text-align: center;
+        }
+        button{
+            text-align: center;
+        }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+    <header>
+        Product Discount Calculator
+    </header>
+    <button class="btn btn-primary" type="submit" onclick="product(productName,price)">calculate</button>
+    </div>
+    <script>// Take input from user
+        let productName = prompt("Enter product name:");
+        let price = parseFloat(prompt("Enter product price:"));
+
+
+        
+        function product(productName,price){
+            let finalPrice;
+
+        if (price > 100 & price<200) {
+            finalPrice = price - (price * 0.10); 
+
+        }
+        else if (price>200 & price<400) {
+            finalPrice=price-(price*0.20);
+            
+        } else if(price>400 & price<1000){
+            finalprice=price-(price0.30)
+
+        }
+            
+      else{
+            finalPrice = price;
+        }
+
+
+        console.log("Product Name: " + productName);
+        console.log("Final Price: " + finalPrice);
+        }
+    </script>
+    
+    
+</body>
+</html>

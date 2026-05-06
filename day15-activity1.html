@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Cart</title>
+</head>
+<body>
+
+<h2>E-Shopping Cart Dashboard</h2>
+
+<button onclick="showProductNames()">Show Product Names</button>
+<button onclick="showTotalPrice()">Show Total Price</button>
+<button onclick="filterProducts()">Filter Expensive Products</button>
+<button onclick="showTotalItems()">Show Total Quantity</button>
+
+<div id="output" style="margin-top:20px; font-weight:bold;"></div>
+
+<script>
+const cart = [
+  {id:1, name:"Laptop", price:60000, qty:2, category:"Electronics"},
+  {id:2, name:"Mouse", price:500, qty:5, category:"Electronics"},
+  {id:3, name:"Keyboard", price:1000, qty:3, category:"Electronics"},
+  {id:4, name:"Monitor", price:15000, qty:2, category:"Electronics"},
+];
+
+
+const showProductNames = () => {
+  const names = cart.map(item => item.name);
+  document.getElementById("output").innerHTML = `Product Names: ${names.join(", ")}`;
+};
+
+//
+const showTotalPrice = () => {
+  const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  document.getElementById("output").innerHTML = `Total Price: ₹${total}`;
+};
+
+
+const filterProducts = () => {
+  const input = prompt("Enter minimum price (default 1000):") || 1000;
+  const filtered = cart.filter(item => item.price > input);
+  
+  const result = filtered.map(item => item.name).join(", ");
+  document.getElementById("output").innerHTML = `Products above ₹${input}: ${result}`;
+};
+
+const calculateTotalItems = () => 
+  cart.reduce((total, item) => total + item.qty, 0);
+
+// 5. Display total items
+const showTotalItems = () => {
+  const totalItems = calculateTotalItems();
+  document.getElementById("output").innerHTML = `Total Items in Cart: ${totalItems}`;
+};
+
+</script>
+
+</body>
+</html>
