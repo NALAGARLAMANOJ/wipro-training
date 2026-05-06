@@ -1,0 +1,74 @@
+use manoj;
+create table employee(emp_id int,emp_name varchar(20),password varchar(20),emp_dep varchar(10),salary int);
+insert into employee values(101,"manoj","Manoj@123","tarining",200000),
+(102,"manuteja","Manu@134","finance",10000),(103,"raja","raja2134","it",40000);
+insert into employee values(101,"manoj","Manoj@123","tarining",200000),
+describe employee;
+Select * from employee;
+create database FoodDelivery;
+use FoodDelivery;
+create table customers(customer_id int,name varchar(10),email varchar(20),city varchar(20));
+create table Restaurant(restaurant_id int,name varchar(10),cuisine_type varchar(20),city varchar(20));
+create table Orders(order_id int,customer_id int,restaurant_id int,order_amount int,order_date date);
+drop table Customers;
+drop table Restaurant;
+drop table Orders;
+CREATE TABLE Customers (customer_id INT PRIMARY KEY,name VARCHAR(100),email VARCHAR(100) UNIQUE,city VARCHAR(50));
+Create table Restaurant(restaurant_id int primary key,name varchar(10),cuisine_type varchar(20),city varchar(20));
+create table Orders (order_id INT primary key,customer_id INT,restaurant_id INT,order_amount DECIMAL(10,2),order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+    FOREIGN KEY (restaurant_id) REFERENCES Restaurant(restaurant_id)
+);
+
+insert into Customers values(1, 'Raul', 'rahul@gmail.com', 'Bangalore'),
+(2, 'manoj', 'manoj@gmail.com', 'Mumbai'),
+(3, 'masthan', 'masthan@gmail.com', 'Delhi');
+
+insert into Restaurant values(101, 'Spice', 'Indian', 'Bangalore'),
+(102, 'Pizza', 'Italian', 'Mumbai'),
+(103, 'Dragon', 'Chinese', 'Delhi');
+insert into Orders values(1001, 1, 101, 450.50, '2026-04-20'),(1002, 2, 102, 799.00, '2026-04-21'),
+(1003, 3, 103, 320.75, '2026-04-22'),(1004, 1, 101, 150.00, '2026-04-23');
+select * from Restaurant;
+select * from Orders; 
+use manoj;
+insert into Orders values(1005,3,102,3000,'2026-05-26');
+select * from Orders;
+------- excercise--part1------------
+select * from Customers;
+select * from employee where emp_dep="finance";
+select * from employee where salary>60000;
+select * from Orders where order_date='2026-04-22';
+select * from Employee order by salary desc limit 2;
+/*--part2------updates------*/
+update Customers set city="pune" where name="ravi";
+update Restaurant set name="fast food" where restaurant_id=101;
+update Orders set order_amount=550 where order_id=1001;
+set sql_safe_updates=0;
+------------------------
+delete from Customer where customer_id=3;
+delete from Orders where order_id=1002;
+delete from Restaurant where city="bangalore";
+
+/*alter,rename,modify commands----*/
+create table Employee2(id int,name varchar(10),salary int,city varchar(20));
+insert into Employee2 values(101,"manoj",10000,'hyderabad');
+insert into Employee2 values(102,"masthan",20000,'bangalore');
+insert into Employee2 values(103,"manuteja",40000,'mumbai');
+
+alter table Employee2 add joiningdate datetime;
+update Employee2 set joiningdate=now()-1 where id=101;
+update Employee2 set joiningdate=now() where id=102;
+update Employee2 set joiningdate=now()+1 where id=103;
+select* from Employee2;
+ Rename table Employee2 to Employee3;
+ select* from Employee3;
+ alter table Employee3 rename column joiningdate to joining_date;
+ alter table Employee3 modify column id int auto_increment primary key;
+ insert into Employee3(name,salary,city)values('raja',30000,'chennai');
+ 
+ 
+
+
+
+
