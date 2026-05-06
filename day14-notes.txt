@@ -1,0 +1,206 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display:flex; /* by default flex-direction is row  , cross axis is column
+            flex-direction: column; /* to specify the direction of the main axis (row or column) */
+            justify-content : center; /* to align items along the main axis */
+            gap:20px; /* to add space between items , instead of using margin */    
+        }
+
+        .box{
+            padding :20px;
+            background-color:lightblue;
+            width:100px;
+            height:10px;
+           
+        }
+
+        </style>
+ </head>
+ <body>
+<!-- Before Using this we were using float and clear , inline- block 
+With Flexbox we can easily align the items in a container and distribute the space between them.
+ It also provides more control over the layout and allows for responsive design.
+ clean alignment , responsive design or layout , and easy to use as per the industry standards.
+-->
+
+
+<!--
+ 
+ 1. Flex Container: To create a flex container, you need to set the display property of the parent element to flex. This will enable the flexbox layout for that container.
+
+ .container {
+   display: flex;  // by default flex-direction is row  , cross axis is column
+ }
+ 
+
+ Main Properties of Flex Container:
+
+    1. flex-direction: This property defines the direction of the main axis (the primary axis along which the flex items are laid out). It can be set to row (default), column, row-reverse, or column-reverse.
+
+    a row: The flex items are laid out in a horizontal row, from left to right.
+     .container {
+   display: flex;  // by default flex-direction is row  , cross axis is column
+    flex-direction: row; // or column, row-reverse, column-reverse
+    justify-content: center; // to align items along the main axis
+    align-items: center; // to align items along the cross axis
+    justify-content: space-between; // to distribute space between items along the main axis and usually used in navbar
+    align-items: stretch; // to stretch items to fill the container along the cross axis
+ }
+
+ b column: The flex items are laid out in a vertical column, from top to bottom.
+ .container {
+     align-items: center; // to align items along the cross axis
+     gap: 10px; // to add space between items , instead of using margin
+     display: flex;  // by default flex-direction is row  , cross axis is column
+     flex-direction: column; // or row, row-reverse, column-reverse
+
+     justify-content: center; // to align items along the main axis
+     justify-content: space-between; // to distribute space between items along the main axis and usually used in navbar
+     align-items: stretch; // to stretch items to fill the container along the cross axis
+ }
+-->
+
+
+    <div class="container">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+    </div>
+ </body>
+ </html>
+ 
+ 
+ 
+ 
+ 
+ <!--
+REsponsive design is an approach to web design that aims to create websites that provide an optimal viewing experience across a wide range of devices, from desktop computers to mobile phones. The goal of responsive design is to ensure that a website looks and functions well on any device, regardless of its screen size or resolution.
+Responsive design is achieved through a combination of flexible grid layouts, flexible images and media, and CSS media queries. By using these techniques, designers can create websites that adapt to the user's device and provide a seamless experience across all platforms.
+
+1. UI adapts to different screen sizes and resolutions, providing an optimal viewing experience for users on any device.
+2. Improved user experience, as users can easily navigate and interact with the website on their preferred
+3. No horizontal scrolling, as the content is designed to fit within the screen width of the device.
+4. Faster loading times, as responsive design often involves optimizing images and other media for different screen
+5. content will remain readable and usable .
+
+
+Device Categories :Width ranges for different devices can vary, but generally, the following categories are used:
+
+Mobile : < 768 px
+Tablet : 768px - 1024px
+Desktop : > 1024px
+
+
+Note *  we should always design for mobile first approach and then scale up to desktop as it is easier to scale up than to scale down and also mobile users are more than desktop users.
+
+Media Queries : Media queries are a powerful tool in responsive design that allow you to apply different styles to a website based on the characteristics of the device being used to view it. Media queries can be used to target specific screen sizes, resolutions, orientations, and other features of the device.
+
+Syntax of media query:
+
+@media (condition) {
+  /* CSS rules to apply when the condition is true */
+}
+
+@media (max-width: 768px) {
+  /* CSS rules to apply when the screen width is less than or equal to 768px */
+}
+
+example : 
+.card
+{
+width: 300px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+
+Responsive design principles :
+
+1. Flexible Grid Layouts: Use a flexible grid system that allows content to adapt to different screen sizes. This can be achieved using CSS Grid or Flexbox.
+
+Use :
+ %
+ flex
+ max-width
+2. Flexible Images and Media: Ensure that images and media elements are responsive and can scale appropriately based on the screen size. This can be achieved using CSS properties like max-width: 100% and height: auto.
+
+img{
+maxwidth: 100%;
+height: auto;
+}
+
+3. Fluid typography: Use relative units (such as em or rem) for font sizes to ensure that text scales appropriately on different devices.
+
+h1{
+font-size: 2em; // this will scale based on the parent element's font size
+
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em; // this will scale down for smaller screens
+  }
+}
+
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Positioning notes can be moved inside the style block or external docs -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+      .card{
+        position: relative;
+        border: 2px solid black;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+      }
+
+       .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      } 
+
+      .badge{
+        position: absolute;
+        top: 10px;        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+</head>
+<body>
+<div class="card">
+   <span class="badge">Content  is added </span>
+   <h2> Java With React</h2>
+</div>    
+</body>
+</html>
