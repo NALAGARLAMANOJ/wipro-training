@@ -1,0 +1,56 @@
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Starting SpringBootAopApplication using Java 25.0.3 with PID 41604 (C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop\target\classes started by user in C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop)
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-15 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3148 ms
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Started SpringBootAopApplication in 6.065 seconds (process running for 7.841)
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-15 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Starting SpringBootAopApplication using Java 25.0.3 with PID 41000 (C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop\target\classes started by user in C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop)
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-15 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1899 ms
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Started SpringBootAopApplication in 3.55 seconds (process running for 4.782)
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-15 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Starting SpringBootAopApplication using Java 25.0.3 with PID 31380 (C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop\target\classes started by user in C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop)
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-15 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2781 ms
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Started SpringBootAopApplication in 6.037 seconds (process running for 7.655)
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-15 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Starting SpringBootAopApplication using Java 25.0.3 with PID 36336 (C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop\target\classes started by user in C:\Users\user\OneDrive\Desktop\springboot\demo\springbootaop)
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-15 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3552 ms
+2026-05-15 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-15 [main] INFO  c.company.SpringBootAopApplication - Started SpringBootAopApplication in 6.819 seconds (process running for 8.179)
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction support Started
+2026-05-15 [main] INFO  com.company.aop.LoggingAop - Transaction committed
+2026-05-15 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-15 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
